@@ -1,0 +1,29 @@
+<button (click)="post()" type="button" class="btn btn-primary">Új feltöltése</button>
+
+
+<div class="row">
+    <div *ngFor="let oszlop of oszlopok" class="col">
+        {{oszlop}}
+    </div>
+    <div class="col">Műveletek</div>
+</div>
+
+<div *ngFor="let meres of meresek|sort" class="row">
+    <div *ngFor="let oszlop of oszlopok" class="col">
+        <input [(ngModel)]="meres[oszlop]" type="number" class="form-control" [id]="meres.key+oszlop">
+       
+    </div>
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <button (click)="ment(meres)" type="button" class="btn btn-primary">Ment</button>
+            </div>
+            <div class="col">
+                <button (click)="torol(meres)" type="button" class="btn btn-primary">Töröl</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <p>{{meresek|json}}</p> -->

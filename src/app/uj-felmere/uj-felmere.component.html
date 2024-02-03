@@ -1,0 +1,14 @@
+<div class="card" style="width: 18rem;">
+
+    <div class="card-body">
+      <h5 class="card-title">Új Mérés Felvitele</h5>
+      
+      <div *ngFor="let oszlop of oszlopok" class="form-floating mb-3">
+        <input [(ngModel)]="ujMeres[oszlop]" type="number" class="form-control" [id]="oszlop" >
+        <label [for]="oszlop">{{oszlop}}</label>
+      </div>
+
+
+      <button (click)="hozzaad()" type="button" class="btn btn-primary">Hozzáad</button>
+    </div>
+  </div>
